@@ -49,8 +49,11 @@
 
     var light2 = new THREE.PointLight(0xffffff, 0.5);
     scene.add(light2);
+
+    // Texture
+		var clothTexture = new THREE.TextureLoader().load("circuit_pattern.png");
   
-    
+    /*
     var material = new THREE.Material({
       transparent: true,
       opacity: 0.5,
@@ -72,9 +75,9 @@
       visible: true,
       side: THREE.FrontSide //THREE.BackSide, THREE.DoubleSide
     });
-    
+    */
  
-    
+    /*
     //flat color
     var material = new THREE.MeshBasicMaterial({
       color: 0x00ff00,
@@ -97,37 +100,37 @@
       skinning: false,
       morphTargets: false
     });
-    
-
-    /*
-    //maps normal vectors to RGB colors
-    var material = new THREE.MeshNormalMaterial({
-      wireframe: false,
-      wireframeLineWidth: 1,
-      morphTargets: false,
-      transparent: false,
-      opacity: 1,
-      depthTest: true,
-      depthWrite: true,
-      depthFunc: THREE.LessEqualDepth,
-      blending: THREE.NormalBlending,
-      blendSrc: THREE.SrcAlphaFactor,
-      blendDst: THREE.OneMinusSrcAlphaFactor,
-      blendEquation: THREE.AddEquation,
-      polygonOffset: false,
-      polygonOffsetFactor: 0,
-      polygonOffsetUnits: 0,
-      clippingPlanes: null,
-      clipShadows: false,
-      overdraw: 0,
-      needsUpdate: false,
-      alphaTest: 0,
-      visible: true,
-      side: THREE.FrontSide //THREE.BackSide, THREE.DoubleSide
-    });
     */
 
-    /*    
+    
+    // //maps normal vectors to RGB colors
+    // var material = new THREE.MeshNormalMaterial({
+    //   wireframe: false,
+    //   wireframeLineWidth: 1,
+    //   morphTargets: false,
+    //   transparent: false,
+    //   opacity: 1,
+    //   depthTest: true,
+    //   depthWrite: true,
+    //   depthFunc: THREE.LessEqualDepth,
+    //   blending: THREE.NormalBlending,
+    //   blendSrc: THREE.SrcAlphaFactor,
+    //   blendDst: THREE.OneMinusSrcAlphaFactor,
+    //   blendEquation: THREE.AddEquation,
+    //   polygonOffset: false,
+    //   polygonOffsetFactor: 0,
+    //   polygonOffsetUnits: 0,
+    //   clippingPlanes: null,
+    //   clipShadows: false,
+    //   overdraw: 0,
+    //   needsUpdate: false,
+    //   alphaTest: 0,
+    //   visible: true,
+    //   side: THREE.FrontSide //THREE.BackSide, THREE.DoubleSide
+    // });
+    
+
+    
     //non-shiny material
     var material = new THREE.MeshLambertMaterial({
       color: 0xF3FFE2,
@@ -136,9 +139,9 @@
       emissive: 0x000000,
       emissiveMap: null,
       emissiveIntensity: 1,
-      specularMap: null
+      specularMap: null,
     });
-    */
+    
 
     /*
     //shiny material
@@ -238,53 +241,53 @@
     /////////////////////Lines
 
 
-    /*
+    
     //Line material
-    var material = new THREE.LineBasicMaterial({
-      color: 0xF3FFE2,
-      linewidth: 2
-    });
-    */
+    // var material = new THREE.LineBasicMaterial({
+    //   color: 0x000000,
+    //   linewidth: 2
+    // });
+    
 
-    /*
+    
     //Dashed line **also compute distance of geometry**
-    var material = new THREE.LineDashedMaterial({
-      color: 0xF3FFE2,
-      linewidth: 1,
-      dashSize: 2, 
-      gapSize: 2
-    });
-    */
+    // var material = new THREE.LineDashedMaterial({
+    //   color: 0x000000,
+    //   linewidth: 1,
+    //   dashSize: 2, 
+    //   gapSize: 2
+    // });
+    
 
-    /*
-    var geometry = new THREE.BoxGeometry(100, 100, 100);
-    var mesh = new THREE.Line(geometry, material);
-    mesh.position.z = -1000;
-    mesh.position.x = -100;
-    scene.add(mesh);
-
-
-    var geometry2 = new THREE.SphereGeometry(50, 20, 20);
-    var mesh2 = new THREE.Line(geometry2, material);
-    mesh2.position.z = -1000;
-    mesh2.position.x = 100;
-    scene.add(mesh2);
+    
+    // var geometry = new THREE.BoxGeometry(100, 100, 100);
+    // var mesh = new THREE.Line(geometry, material);
+    // mesh.position.z = -1000;
+    // mesh.position.x = -100;
+    // scene.add(mesh);
 
 
-    var geometry3 = new THREE.PlaneGeometry(10000, 10000, 100, 100);
-    var mesh3 = new THREE.Line(geometry3, material);
-    mesh3.rotation.x = -90 * Math.PI / 180;
-    mesh3.position.y = -100;
-    scene.add(mesh3);
-    */
+    // var geometry2 = new THREE.SphereGeometry(50, 20, 20);
+    // var mesh2 = new THREE.Line(geometry2, material);
+    // mesh2.position.z = -1000;
+    // mesh2.position.x = 100;
+    // scene.add(mesh2);
+
+
+    // var geometry3 = new THREE.PlaneGeometry(10000, 10000, 100, 100);
+    // var mesh3 = new THREE.Line(geometry3, material);
+    // mesh3.rotation.x = -90 * Math.PI / 180;
+    // mesh3.position.y = -100;
+    // scene.add(mesh3);
+    
 
 
     //for dashed lines
-    /*
-    geometry.computeLineDistances();
-    geometry2.computeLineDistances();
-    geometry3.computeLineDistances();
-    */
+    
+    // geometry.computeLineDistances();
+    // geometry2.computeLineDistances();
+    // geometry3.computeLineDistances();
+    
 
 
 
@@ -319,19 +322,19 @@
 
     ////////////////////Sprite
 
-    /*
-    //Sprite material    
-    var material = new THREE.SpriteMaterial({
-      //map: new THREE.TextureLoader().load("59e37674fe09dc0ea6caf1b87115c575.jpg"),
-      color: 0xF3FFE2
-    });
+    
+    // //Sprite material    
+    // var material = new THREE.SpriteMaterial({
+    //   map: new THREE.TextureLoader().load("circuit_pattern.png"),
+    //   color: 0xF0F0F0
+    // });
 
 
-    var mesh = new THREE.Sprite(material);
-    mesh.scale.set(100, 100, 100);
-    mesh.position.z = -1000;
-    scene.add(mesh);
-    */
+    // var mesh = new THREE.Sprite(material);
+    // mesh.scale.set(100, 100, 100);
+    // mesh.position.z = -1000;
+    // scene.add(mesh);
+    
 
 
 
@@ -344,6 +347,8 @@
 
     	mesh.rotation.x += 0.01;
     	mesh.rotation.y += 0.01;
+    	// mesh2.rotation.x += 0.01;
+    	// mesh2.rotation.y += 0.01;
 
 
       //with sprite
